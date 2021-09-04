@@ -1,0 +1,109 @@
+/* Custom CSS Properties (using these for colors) */
+:root {
+  --success-color: #2ecc71;
+  --error-color: #e74c3c;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f9fafb;
+  font-family: "Open Sans", sans-serif;
+  display: flex; /* makes all direct children flex items */
+
+  /* putting all direct children items in the center */
+  align-items: center; /* aligns items vertically in center (note: need to give a height) */
+  justify-content: center; /*aligns items horizontally in center */
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* MAIN PARTS */
+
+.container {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  width: 400px;
+}
+
+.form {
+  padding: 30px 40px;
+}
+
+/* FORM CONTENT */
+
+.title {
+  text-align: center;
+  margin: 0 0 20px; /* first applies to top, second to left & right, third to bottom */
+}
+
+.form-control {
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.form-control label {
+  color: #777;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-control input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 2px #f0f0f0 solid;
+  font-size: 14px;
+}
+
+/* Styling input boxes so that it doesn't have an outline in focus state */
+
+.form-control input:focus {
+  outline: 0;
+  border-color: #777;
+}
+
+/* VALIDATION STYLING */
+
+/* Styling input boxes according to whether it has suceess or error class */
+
+.form-control.success input {
+  border-color: var(--success-color);
+}
+
+.form-control.error input {
+  border-color: var(--error-color);
+}
+
+/* Styling for error messages */
+
+.form-control small {
+  color: var(--error-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  visibility: hidden;
+}
+
+.form-control.error small {
+  /* show the error message when the 'small' element has the .error class */
+  visibility: visible;
+}
+
+.form button {
+  cursor: pointer;
+  background-color: #3498db;
+  border: 2px solid #3498db;
+  border-radius: 4px;
+  color: #fff;
+  display: block;
+  font-size: 16px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
